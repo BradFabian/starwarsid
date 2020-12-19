@@ -4,7 +4,7 @@
   "description": "An Star Wars Id Generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "sass --watch ./resources/sass/main.scss ./resources/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/BradFabian/starwarsid#readme",
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "sass": "^1.30.0"
   }
 }
