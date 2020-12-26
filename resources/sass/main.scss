@@ -1,3 +1,30 @@
-nav {
-  background: blue;
+body {
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+  align-content: center;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  & nav {
+    background: blue;
+  }
+}
+
+.terminal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 80vh;
+  max-width: 400px;
+}
+
+footer {
+  text-align: center;
 }
