@@ -1,8 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
 body {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   height: 98vh;
   align-content: center;
+
   justify-content: center;
 }
 
@@ -10,19 +19,31 @@ header {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
+
   & nav {
     background: blue;
   }
 }
 
 .terminal {
+  flex-basis: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
   height: 80vh;
-  max-width: 400px;
+
+  border: 1px solid black;
+}
+.computer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid pink;
+  height: 50vh;
+  width: 50%;
 }
 
 footer {
