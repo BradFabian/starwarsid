@@ -1,45 +1,63 @@
 
-const baseUrl = 'https://swapi.dev/api/people';
+const baseUrl = 'https://swapi.dev/api/films/1/';
 const userInput = 'r2';
 const movieUrl = '';
+
 let filmArray = [];
 let filmString = '';
 
 
 
-async function getPeople() {
+async function getFilms() {
+    console.log(baseUrl)
+    const details = document.querySelector('.movieDetails');
     const url = baseUrl + userInput;
     const computerScreen = document.querySelector('.computer__screen');
     const responsePromise = await fetch(baseUrl);
     
     if(responsePromise.ok) {
         const data = await responsePromise.json();
-        const planetRes = data.results;
-        console.log(planetRes);
+        const filmRes = data;
+        console.log(filmRes);
         
 
-       planetRes.forEach((post) => { 
+    
 
-            const {name, eye_color, hair_color, films} = post;
+            const {title, opening_crawl, director, producer, release_date, characters } = filmRes;
 
-        
+            const className = title.split(' ').join('');
+
+            details.innerHTML = `
+            <h2>${title}</h2>
+                <ul>
+                <li> Director: ${director}</li> 
+                <li> Producer: ${producer} </li>
+                <li> Release Date: ${release_date} </li>
+                
+                <h3> Characters In This Movie</h3>
+                <ul class='cast ${className}'>
+                </ul>
+                </ul> 
+            `
+
+
+            /*<*/
             
             
             
 
-            let div = document.createElement("div");
+        let div = document.createElement("div");
          div.innerHTML = `
             
-                <h3>${name}</h3>
-                <ul>
-                <li> Eye Color: ${eye_color} Hair: ${hair_color} </li>
-                <li>${getMovies(films)}</li>
-                </ul>
+                
+                <h3>${opening_crawl}</h3>
             
             `;
-            div.classList.add('planet');
+            div.classList.add('crawl');
             computerScreen.appendChild(div);
-        });
+
+            getActors(characters, className)
+        
 
        
     } else {
@@ -48,19 +66,28 @@ async function getPeople() {
 }
 
 
-async function getMovies(films){
+function getActors(characters, className){
 
-    let filmArray = [];
-    let filmString = '';
-
-
-    filmArray = Array.from(films);
-    console.log(filmArray)
-        filmArray.forEach(filmURL => fetch(filmURL).then(response => response.json()).then(data => filmString += data.title)
     
-    )
+    const characterUL = document.querySelector(`.${className}`)
 
-    console.log(filmString);
+    for(let i = 0; i < characters.length; i++){
+        fetch(characters[i]).then(response => response.json()).then(data => {
+     
+            const li = document.createElement('li')
+      
+           li.innerHTML = ` ${data.name} `;
+           characterUL.appendChild(li);
+        })
+
+      
+    }
+    
+       
+        
+    
+
+
 }
 
-getPeople();
+getFilms();

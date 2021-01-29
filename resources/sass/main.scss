@@ -9,31 +9,47 @@
 body {
   display: flex;
   flex-flow: column;
-  height: 98vh;
+  height: 90vh;
   align-content: center;
-
-  justify-content: center;
 }
 
 header {
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  height: 100px;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
 
   & nav {
     background: blue;
   }
 }
 
+.header__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 5em;
+  padding: 2em;
+}
+
 .terminal {
   flex-basis: 40%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   align-content: center;
-  height: 80vh;
-
+  height: 70vh;
+  padding: 5rem;
   border: 1px solid black;
 }
 .computer {
@@ -42,10 +58,97 @@ header {
   justify-content: center;
   align-items: center;
   border: 1px solid pink;
-  height: 50vh;
-  width: 50%;
+  height: 30rem;
+  width: 350px;
+  margin: auto;
+  position: relative;
+  border: 30px solid transparent;
+  border-image-source: url("../images/retroTv.png");
+  border-image-slice: 30 fill;
+  border-image-outset: 0;
+
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 780px) {
+  .terminal {
+    padding: 1rem;
+    flex-direction: column-reverse;
+  }
+  .computer {
+    height: 15rem;
+    width: 250px;
+    margin: 0;
+  }
+}
+
+.computer__screen {
+  z-index: -1;
+  display: flex;
+  perspective: 400px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  flex-direction: column;
+  background-color: black;
+  background-clip: padding-box;
+  width: 80%;
+  height: 90%;
+  overflow: hidden;
+  align-items: center;
+
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 5.8rem;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+
+  text-align: justify;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.movieDetails {
+  ul {
+    list-style: none;
+  }
+}
+
+.crawl {
+  /* Position the element so we can adjust the top property in the animation */
+  position: relative;
+  /* Making sure the text is fully off the screen at the start and end of the animation */
+  top: -100px;
+  /* Defines the skew origin at the very center when we apply transforms on the animation */
+  transform-origin: 100% 50%;
+  /* Adds the crawl animation, which plays for one minute */
+  animation: crawl 60s linear;
+}
+
+/* We're calling this animation "crawl" */
+@keyframes crawl {
+  0% {
+    /* The element starts below the screen */
+    top: 0;
+    /* Rotate the text 20 degrees but keep it close to the viewer */
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
+    top: -6000px;
+    /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
 }
 
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+
+  width: 100%;
 }
