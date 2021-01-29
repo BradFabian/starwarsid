@@ -9,8 +9,9 @@
 body {
   display: flex;
   flex-flow: column;
-  height: 90vh;
   align-content: center;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1rem;
 }
 
 header {
@@ -55,11 +56,11 @@ header nav {
 .computer {
   display: flex;
   flex-direction: column;
+  flex-basis: 70%;
   justify-content: center;
   align-items: center;
   border: 1px solid pink;
   height: 30rem;
-  width: 350px;
   margin: auto;
   position: relative;
   border: 30px solid transparent;
@@ -80,11 +81,15 @@ header nav {
     width: 250px;
     margin: 0;
   }
+
+  body {
+    font-size: 0.5rem;
+  }
 }
 .computer__screen {
   z-index: -1;
   display: flex;
-  perspective: 400px;
+  perspective: 550px;
   top: 0;
   left: 0;
   position: absolute;
@@ -96,7 +101,6 @@ header nav {
   overflow: hidden;
   align-items: center;
   color: #feda4a;
-  font-family: "Pathway Gothic One", sans-serif;
   font-size: 5.8rem;
   font-weight: 600;
   letter-spacing: 6px;
@@ -107,10 +111,40 @@ header nav {
   list-style: none;
 }
 
+.movieDetails {
+  background-color: #feda4a9f;
+  position: absolute;
+  display: none;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  z-index: 120;
+  left: 0;
+  animation: slideMe 0.7s ease-in;
+  flex: 1;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
 .movieDetails ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.movieDetails h2,
+.movieDetails h3 {
+  text-align: center;
 }
 
+@keyframes slideMe {
+  0% {
+    transform: skewX(53deg) translateX(-500px);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
 .crawl {
   /* Position the element so we can adjust the top property in the animation */
   position: relative;
@@ -120,6 +154,7 @@ header nav {
   transform-origin: 100% 50%;
   /* Adds the crawl animation, which plays for one minute */
   animation: crawl 60s linear;
+  display: inline-block;
 }
 
 /* We're calling this animation "crawl" */
@@ -132,7 +167,7 @@ header nav {
   }
   100% {
     /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
-    top: -6000px;
+    top: -8000px;
     /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
     transform: rotateX(25deg) translateZ(-2500px);
   }
