@@ -44,6 +44,8 @@ async function getFilms() {
 
                
             */
+
+            details.style.display='block';
             
             
             
@@ -92,4 +94,3 @@ async function getFilms() {
 
 } */
 
-getFilms();
