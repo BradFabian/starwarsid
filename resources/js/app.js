@@ -50,9 +50,9 @@ async function getFilms() {
 
         let div = document.createElement("div");
          div.innerHTML = `
-                <h3 class='episode'> Episode ${episode_id}</h3>
-                <h3 class='title'> ${title}</h3>
-                <h3>${opening_crawl}</h3>
+                <p class='episode'> Episode ${episode_id}</p>
+                <h1 class='title'> ${title}</h1>
+                <p>${opening_crawl}</p>
             
             `;
             div.classList.add('crawl');

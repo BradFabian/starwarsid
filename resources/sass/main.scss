@@ -15,27 +15,94 @@ body {
   font-size: 1rem;
 }
 
-header {
+.header__container {
   display: flex;
   flex-flow: row;
-  height: 100px;
-  padding: 1rem;
-  justify-content: center;
+  height: 7rem;
+
+  justify-content: space-around;
   align-items: center;
 
-  & nav {
-    background: blue;
+  @media only screen and (max-width: 31.25em) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
   }
 }
 
-.header__container {
-  display: flex;
-  justify-content: space-around;
-}
-
+////////////////////////////////////////
+// SEARCH
 .search {
+  flex: 0 0 20%;
+
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all 0.2s;
+    margin-right: -3.25rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: #f0eeee;
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: #ccc;
+    }
+  }
+
+  &__input:focus + &__button {
+    background-color: #f0eeee;
+  }
+
+  &__button {
+    border: none;
+    background-color: #f4f2f2;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: #999;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: #f4f2f2;
+
+    &__input {
+      border-radius: 0;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: -8px 10px 0px -7px #feda4a, 8px 10px 0px -7px #feda4a;
+    }
+  }
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 3px 2px #feda4a;
 }
 
 .logo {
@@ -60,7 +127,7 @@ header {
   flex-basis: 70%;
   justify-content: center;
   align-items: center;
-  border: 1px solid pink;
+
   height: 30rem;
   max-width: 600px;
   margin: auto;
@@ -92,7 +159,7 @@ header {
   z-index: -1;
   display: flex;
   justify-content: center;
-  perspective: 300px;
+  perspective: 200px;
   top: 0;
   left: 0;
   position: absolute;
@@ -103,18 +170,16 @@ header {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   width: 80%;
-  height: 90%;
+  height: 87%;
   overflow: hidden;
   align-items: center;
 
   color: #feda4a;
 
-  font-size: 5.8rem;
+  font-size: 300%;
   font-weight: 600;
   letter-spacing: 6px;
   line-height: 150%;
-
-  text-align: justify;
 
   ul {
     list-style: none;
@@ -177,7 +242,11 @@ header {
   /* Defines the skew origin at the very center when we apply transforms on the animation */
   transform-origin: 50% 100%;
   /* Adds the crawl animation, which plays for one minute */
-  animation: crawl 60s linear;
+  animation: crawl 120s linear;
+
+  width: 800px;
+  letter-spacing: 6px;
+  line-height: 150%;
 }
 
 .episode {
@@ -187,6 +256,8 @@ header {
 
 .title {
   text-transform: uppercase;
+  margin: 0 0 50px;
+  text-align: center;
 }
 
 /* We're calling this animation "crawl" */
