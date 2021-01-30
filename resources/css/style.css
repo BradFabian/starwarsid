@@ -90,7 +90,8 @@ header nav {
 .computer__screen {
   z-index: -1;
   display: flex;
-  perspective: 550px;
+  justify-content: center;
+  perspective: 300px;
   top: 0;
   left: 0;
   position: absolute;
@@ -150,9 +151,9 @@ header nav {
   /* Position the element so we can adjust the top property in the animation */
   position: relative;
   /* Making sure the text is fully off the screen at the start and end of the animation */
-  top: -100px;
+  top: 9999px;
   /* Defines the skew origin at the very center when we apply transforms on the animation */
-  transform-origin: 100% 50%;
+  transform-origin: 50% 100%;
   /* Adds the crawl animation, which plays for one minute */
   animation: crawl 60s linear;
   display: inline-block;
