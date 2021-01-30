@@ -23,7 +23,7 @@ async function getFilms() {
 
     
 
-            const {title, opening_crawl, director, producer, release_date, characters } = filmRes;
+            const {title, opening_crawl, director, producer, release_date, episode_id } = filmRes;
 
             const className = title.split(' ').join('');
 
@@ -41,6 +41,8 @@ async function getFilms() {
             <h3> Characters In This Movie</h3>
                 <ul class='cast ${className}'>
                 </ul>
+
+               
             */
             
             
@@ -48,8 +50,8 @@ async function getFilms() {
 
         let div = document.createElement("div");
          div.innerHTML = `
-            
-                
+                <h3 class='episode'> Episode ${episode_id}</h3>
+                <h3 class='title'> ${title}</h3>
                 <h3>${opening_crawl}</h3>
             
             `;
