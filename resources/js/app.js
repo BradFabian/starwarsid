@@ -66,13 +66,13 @@ async function getFilms() {
 }
 
 
-function getActors(characters, className){
+ function getActors(characters, className){
 
     
     const characterUL = document.querySelector(`.${className}`)
 
     for(let i = 0; i < characters.length; i++){
-        fetch(characters[i]).then(response => response.json()).then(data => {
+        fetch(characters[i], { mode: 'cors'}).then(response => response.json()).then(data => {
      
             const li = document.createElement('li')
       
