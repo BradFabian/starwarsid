@@ -99,6 +99,7 @@ header nav {
   background-image: url("../images/3d-hyperspace-background-with-warp-tunnel-effect.jpg");
   background-position: center;
   background-clip: padding-box;
+  -webkit-background-clip: padding-box;
   width: 80%;
   height: 90%;
   overflow: hidden;
@@ -159,14 +160,13 @@ header nav {
 }
 .crawl {
   /* Position the element so we can adjust the top property in the animation */
-  position: relative;
+  position: absolute;
   /* Making sure the text is fully off the screen at the start and end of the animation */
   top: 9000px;
   /* Defines the skew origin at the very center when we apply transforms on the animation */
   transform-origin: 50% 100%;
   /* Adds the crawl animation, which plays for one minute */
   animation: crawl 60s linear;
-  display: inline-block;
 }
 
 .episode {
@@ -175,7 +175,6 @@ header nav {
 }
 
 .title {
-  margin: 0 0 100px;
   text-transform: uppercase;
 }
 
