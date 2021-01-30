@@ -33,15 +33,15 @@ async function getFilms() {
                 <li> Director: ${director}</li> 
                 <li> Producer: ${producer} </li>
                 <li> Release Date: ${release_date} </li>
-                
-                <h3> Characters In This Movie</h3>
-                <ul class='cast ${className}'>
-                </ul>
                 </ul> 
             `
 
 
-            /*<*/
+            /*
+            <h3> Characters In This Movie</h3>
+                <ul class='cast ${className}'>
+                </ul>
+            */
             
             
             
@@ -56,7 +56,7 @@ async function getFilms() {
             div.classList.add('crawl');
             computerScreen.appendChild(div);
 
-            getActors(characters, className)
+           /* getActors(characters, className) */
         
 
        
@@ -66,7 +66,7 @@ async function getFilms() {
 }
 
 
- function getActors(characters, className){
+ /*function getActors(characters, className){
 
     
     const characterUL = document.querySelector(`.${className}`)
@@ -88,6 +88,6 @@ async function getFilms() {
     
 
 
-}
+} */
 
 getFilms();
