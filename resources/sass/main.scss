@@ -9,7 +9,7 @@
 body {
   display: flex;
   flex-flow: column;
-
+  min-height: 100vh;
   align-content: center;
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 1rem;
@@ -111,15 +111,14 @@ input[type="text"]:focus {
 }
 
 .terminal {
-  flex-basis: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   align-content: center;
   height: 70vh;
-  padding: 5rem;
-  border: 1px solid black;
+  padding: 2rem;
+  //border: 1px solid black;
 }
 .computer {
   display: flex;
@@ -129,6 +128,7 @@ input[type="text"]:focus {
   align-items: center;
 
   height: 30rem;
+
   max-width: 600px;
   margin: auto;
   position: relative;
@@ -147,7 +147,7 @@ input[type="text"]:focus {
   }
   .computer {
     height: 15rem;
-    width: 250px;
+    min-width: 80%;
     margin: 0;
   }
   body {
@@ -204,7 +204,8 @@ input[type="text"]:focus {
   padding: 1rem;
   margin: 1rem;
   z-index: 120;
-  left: 0;
+  right: 8%;
+  bottom: 8%;
   animation: slideMe 0.7s ease-in;
   flex: 1;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
@@ -226,7 +227,7 @@ input[type="text"]:focus {
 
 @keyframes slideMe {
   0% {
-    transform: skewX(53deg) translateX(-500px);
+    transform: skewX(-40deg) translateX(300px);
   }
 
   100% {
@@ -247,6 +248,20 @@ input[type="text"]:focus {
   width: 800px;
   letter-spacing: 6px;
   line-height: 150%;
+}
+
+@media only screen and (max-width: 37.5) {
+  .movieDetails {
+    padding: 0.7rem;
+    margin: 0.7rem;
+    right: 2%;
+    bottom: 2%;
+  }
+  .crawl {
+    width: 80px;
+    letter-spacing: 2px;
+    line-height: 10%;
+  }
 }
 
 .episode {
