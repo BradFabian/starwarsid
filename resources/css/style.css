@@ -96,7 +96,8 @@ header nav {
   left: 0;
   position: absolute;
   flex-direction: column;
-  background-color: black;
+  background-image: url("../images/3d-hyperspace-background-with-warp-tunnel-effect.jpg");
+  background-position: center;
   background-clip: padding-box;
   width: 80%;
   height: 90%;
@@ -111,6 +112,15 @@ header nav {
 }
 .computer__screen ul {
   list-style: none;
+}
+
+.fade {
+  position: absolute;
+  width: 100%;
+  min-height: 25vh;
+  top: 0;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 2;
 }
 
 .movieDetails {
