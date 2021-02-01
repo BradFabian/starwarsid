@@ -121,6 +121,8 @@ input[type=text]:focus {
   position: relative;
   border: 30px solid transparent;
   border-image: url("../images/retroTv.png") 30 fill;
+  -webkit-border-image: url("../images/retroTv.png") 30 fill;
+  -moz-border-image: url("../images/retroTv.png") 30 fill;
   /*border-image-source: url("../images/retroTv.png");
   border-image-slice: 30 fill;
   border-image-outset: 0;
@@ -162,9 +164,6 @@ input[type=text]:focus {
   flex-direction: column;
   background-image: url("../images/3d-hyperspace-background-with-warp-tunnel-effect.jpg");
   background-position: center;
-  background-clip: padding-box;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding-box;
   width: 80%;
   height: 87%;
   overflow: hidden;
