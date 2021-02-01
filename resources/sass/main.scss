@@ -135,8 +135,8 @@ input[type="text"]:focus {
   position: relative;
   border: 30px solid transparent;
 
-  border-image: url("../images/retroTv.png") 30 fill 0;
-  border-image-source: url("../images/retroTv.png");
+  border-image: url("../images/retroTv.png") 30 fill;
+  /*border-image-source: url("../images/retroTv.png");
   border-image-slice: 30 fill;
   border-image-outset: 0;
 
@@ -146,7 +146,7 @@ input[type="text"]:focus {
 
   -webkit-border-image-source: url("../images/retroTv.png");
   -webkit-order-image-slice: 30 fill;
-  -webkit-border-image-outset: 0;
+  -webkit-border-image-outset: 0;*/
 
   overflow: hidden;
 }
