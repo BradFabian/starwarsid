@@ -27,8 +27,8 @@ async function getFilms() {
 
     const slugUserInput = userInput.value.trim().split(' ').join('');
     
-    const url = baseUrl + slugUserInput;
-   
+    const url = baseUrl + userInput.value.trim();
+    console.log(url)
     const responsePromise = await fetch(url);
 
   
