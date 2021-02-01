@@ -315,5 +315,9 @@ footer {
     &:hover span {
       transform: rotate(180deg);
     }
+
+    &:focus {
+      outline-color: #feda4a;
+    }
   }
 }

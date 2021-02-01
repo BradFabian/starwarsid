@@ -289,5 +289,8 @@ footer a span {
 footer a:hover span {
   transform: rotate(180deg);
 }
+footer a:focus {
+  outline-color: #feda4a;
+}
 
 /*# sourceMappingURL=style.css.map */

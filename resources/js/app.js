@@ -92,7 +92,7 @@ async function getFilms() {
             div.classList.add('crawl');
             computerScreen.appendChild(div);
             details.style.display='block';
-           /* getActors(characters, className) */
+           
         
 
        
