@@ -11,7 +11,12 @@ let filmString = '';
 
 
 
+
+
+
 async function getFilms() {
+
+    
 
     /* reset to original values*/
     //form.reset();
@@ -19,10 +24,11 @@ async function getFilms() {
     details.style.display='none';
    
     const userInput = document.getElementById('userMovie');
+
+    const slugUserInput = userInput.value.trim().split(' ').join('');
     
-    
-    const url = baseUrl + userInput.value.trim();
-   console.log(url);
+    const url = baseUrl + slugUserInput;
+   
     const responsePromise = await fetch(url);
 
   
@@ -30,10 +36,25 @@ async function getFilms() {
    
     
     if(responsePromise.ok) {
+
+        
        
         const data = await responsePromise.json();
        
         console.log(data.results);
+
+        if(data.results.length === 0 ){
+            details.style.display='block';
+
+            
+           return details.innerHTML = `
+                
+                <h2> No records for "${userInput.value}" exsit on SWAPI</h2>
+                
+                   
+                `
+            
+        }
         results = data.results;
 
           results.forEach(
@@ -94,27 +115,4 @@ async function getFilms() {
 }
 
 
- /*function getActors(characters, className){
-
-    
-    const characterUL = document.querySelector(`.${className}`)
-
-    for(let i = 0; i < characters.length; i++){
-        fetch(characters[i], { mode: 'cors'}).then(response => response.json()).then(data => {
-     
-            const li = document.createElement('li')
-      
-           li.innerHTML = ` ${data.name} `;
-           characterUL.appendChild(li);
-        })
-
-      
-    }
-    
-       
-        
-    
-
-
-} */
 
