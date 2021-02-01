@@ -1,72 +1,96 @@
 
-const baseUrl = 'https://swapi.dev/api/films/1/';
-const userInput = 'r2';
+const baseUrl = 'https://swapi.dev/api/films/?search=';
 const movieUrl = '';
+const form = document.querySelector('.search');
+const details = document.querySelector('.movieDetails');
+const computerScreen = document.querySelector('.computer__screen');
 
+const div = document.createElement("div");
 let filmArray = [];
 let filmString = '';
 
 
 
 async function getFilms() {
-    console.log(baseUrl)
-    const details = document.querySelector('.movieDetails');
-    const url = baseUrl + userInput;
-    const computerScreen = document.querySelector('.computer__screen');
-    const responsePromise = await fetch(baseUrl);
+
+    /* reset to original values*/
+    //form.reset();
+    computerScreen.innerHTML='';
+    details.style.display='none';
+   
+    const userInput = document.getElementById('userMovie');
+    
+    
+    const url = baseUrl + userInput.value.trim();
+   console.log(url);
+    const responsePromise = await fetch(url);
+
+  
+
+   
     
     if(responsePromise.ok) {
+       
         const data = await responsePromise.json();
-        const filmRes = data;
-        console.log(filmRes);
-        
+       
+        console.log(data.results);
+        results = data.results;
 
-    
-
-            const {title, opening_crawl, director, producer, release_date, episode_id } = filmRes;
-
-            const className = title.split(' ').join('');
-
-            details.innerHTML = `
-            <h2>${title}</h2>
-                <ul>
-                <li> Director: ${director}</li> 
-                <li> Producer: ${producer} </li>
-                <li> Release Date: ${release_date} </li>
-                </ul> 
-            `
-
-
-            /*
-            <h3> Characters In This Movie</h3>
-                <ul class='cast ${className}'>
-                </ul>
+          results.forEach(
+            filmRes => {
 
                
-            */
 
-            details.style.display='block';
-            
-            
+                details.innerHTML = `
+                <h2>${filmRes.title}</h2>
+                    <ul>
+                    <li> Director: ${filmRes.director}</li> 
+                    <li> Producer: ${filmRes.producer} </li>
+                    <li> Release Date: ${filmRes.release_date} </li>
+                    </ul> 
+                `
+    
+    
+               
+              
+                div.innerHTML = `
+                    <p class='episode'> Episode ${filmRes.episode_id}</p>
+                    <h1 class='title'> ${filmRes.title}</h1>
+                    <p>${filmRes.opening_crawl}</p>
+                
+                `;
+
+            }
+          )
+
             
 
-        let div = document.createElement("div");
-         div.innerHTML = `
-                <p class='episode'> Episode ${episode_id}</p>
-                <h1 class='title'> ${title}</h1>
-                <p>${opening_crawl}</p>
             
-            `;
+
+           
             div.classList.add('crawl');
             computerScreen.appendChild(div);
-
+            details.style.display='block';
            /* getActors(characters, className) */
         
 
        
     } else {
+
+         
+
         console.error(`Error: ${responsePromise.status}`)
+        details.innerHTML = `
+            
+            <h2>Welcome to the dark side. </h2>
+            <h2>Error: ${responsePromise.status} status.</h2>
+               
+            `
+        details.style.display='block';
+
     }
+
+
 }
 
 

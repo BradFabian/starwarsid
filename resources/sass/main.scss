@@ -119,6 +119,7 @@ input[type="text"]:focus {
   height: 70vh;
   padding: 2rem;
   //border: 1px solid black;
+  overflow: hidden;
 }
 .computer {
   display: flex;
@@ -211,6 +212,7 @@ input[type="text"]:focus {
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
   line-height: 1.6;
+  overflow: hidden;
 
   ul {
     list-style: none;
@@ -227,7 +229,7 @@ input[type="text"]:focus {
 
 @keyframes slideMe {
   0% {
-    transform: skewX(-40deg) translateX(300px);
+    transform: skewX(20deg) translateX(80px);
   }
 
   100% {
@@ -301,6 +303,7 @@ footer {
 
   a {
     color: #feda4a;
+    text-shadow: 1px 1.5px rgba(0, 0, 0, 0.3);
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
