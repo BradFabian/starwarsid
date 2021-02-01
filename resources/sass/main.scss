@@ -298,4 +298,19 @@ footer {
   text-align: center;
 
   width: 100%;
+
+  a {
+    color: #feda4a;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    & span {
+      transition: transform 0.8s ease-in-out;
+    }
+
+    &:hover span {
+      transform: rotate(180deg);
+    }
+  }
 }
