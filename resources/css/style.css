@@ -160,15 +160,6 @@ input[type=text]:focus {
   list-style: none;
 }
 
-.fade {
-  position: absolute;
-  width: 100%;
-  min-height: 25vh;
-  top: 0;
-  background-image: linear-gradient(0deg, transparent, black 75%);
-  z-index: 2;
-}
-
 .movieDetails {
   background-color: #feda4a9f;
   position: absolute;
@@ -217,6 +208,15 @@ input[type=text]:focus {
   width: 800px;
   letter-spacing: 6px;
   line-height: 150%;
+}
+
+.fade {
+  position: absolute;
+  width: 100%;
+  min-height: 25vh;
+  top: 0;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 2;
 }
 
 .episode {
