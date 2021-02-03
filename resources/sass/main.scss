@@ -128,7 +128,7 @@ input[type="text"]:focus {
 }
 ////////////////////////////////////////
 // TV
-.computer {
+.tv {
   display: flex;
   flex-direction: column;
   flex-basis: 70%;
@@ -162,7 +162,7 @@ input[type="text"]:focus {
 ////////////////////////////////////////
 // Tv Screen
 
-.computer__screen {
+.tv__screen {
   z-index: -1;
   display: flex;
   justify-content: center;
@@ -322,10 +322,10 @@ input[type="text"]:focus {
     padding: 1rem;
     flex-direction: column-reverse;
   }
-  .computer__screen {
+  .tv__screen {
     perspective: 500px;
   }
-  .computer {
+  .tv {
     height: 15rem;
     min-width: 80%;
     margin: 0;

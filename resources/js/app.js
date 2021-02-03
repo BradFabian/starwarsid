@@ -3,7 +3,7 @@ const baseUrl = 'https://swapi.dev/api/films/?search=';
 const movieUrl = '';
 const form = document.querySelector('.search');
 const details = document.querySelector('.movieDetails');
-const computerScreen = document.querySelector('.computer__screen');
+const computerScreen = document.querySelector('.tv__screen');
 
 const div = document.createElement("div");
 let filmArray = [];

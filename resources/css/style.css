@@ -109,7 +109,7 @@ input[type=text]:focus {
   overflow: hidden;
 }
 
-.computer {
+.tv {
   display: flex;
   flex-direction: column;
   flex-basis: 70%;
@@ -135,7 +135,7 @@ input[type=text]:focus {
   overflow: hidden;
 }
 
-.computer__screen {
+.tv__screen {
   z-index: -1;
   display: flex;
   justify-content: center;
@@ -156,7 +156,7 @@ input[type=text]:focus {
   letter-spacing: 6px;
   line-height: 150%;
 }
-.computer__screen ul {
+.tv__screen ul {
   list-style: none;
 }
 
@@ -273,11 +273,11 @@ input[type=text]:focus {
     flex-direction: column-reverse;
   }
 
-  .computer__screen {
+  .tv__screen {
     perspective: 500px;
   }
 
-  .computer {
+  .tv {
     height: 15rem;
     min-width: 80%;
     margin: 0;
