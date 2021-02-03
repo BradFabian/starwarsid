@@ -49,7 +49,20 @@ async function getFilms() {
             
            return details.innerHTML = `
                 
-                <h2> No records for "${userInput.value}" exsit on SWAPI</h2>
+                <h2> No records for "${userInput.value}" exist on SWAPI</h2>
+                
+                   
+                `
+            
+        }
+
+        if(data.results.length >= 6 ){
+            details.style.display='block';
+
+            
+           return details.innerHTML = `
+                
+                <h2> Please enter a Star Wars movie title in the search bar</h2>
                 
                    
                 `
@@ -77,7 +90,7 @@ async function getFilms() {
                 div.innerHTML = `
                     <p class='episode'> Episode ${filmRes.episode_id}</p>
                     <h1 class='title'> ${filmRes.title}</h1>
-                    <p>${filmRes.opening_crawl}</p>
+                    <p class='opening'>${filmRes.opening_crawl}</p>
                 
                 `;
 
